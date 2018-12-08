@@ -8,11 +8,14 @@ export class MenuService {
 
 	items:any=[];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+		this.get_data();
+	}
 	
 	get_data() {
-		return this.http.get("https://api.myjson.com/bins/z9s2i").subscribe((data: any) => {
-        this.items = data.items;
+		this.http.get("https://api.myjson.com/bins/z9s2i").subscribe((data: any) => {
+			this.items = data.items;
     });
 	}
+	
 }
