@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from "../../services/basket.service";
+import { MenuService } from "../../services/menu.service";
 
 @Component({
   selector: 'app-basket',
@@ -8,7 +9,9 @@ import { BasketService } from "../../services/basket.service";
 })
 export class BasketComponent implements OnInit {
 
-  constructor(public basketService:BasketService) { }
+  constructor(
+		public basketService:BasketService,
+		public menuService:MenuService) { }
 
   ngOnInit() {
   }

@@ -1,4 +1,35 @@
-<div *ngFor="let item of basketService.basket">
-	<p>{{item.id}} x {{item.count}} = ${{item.price}}</p>
+<div class="m-3 p-3">
+	<h2>Basket</h2>
+	<span *ngIf="basketService.basket.length; else noItems">
+		<table class="table table-sm">
+			<tr>
+				<th>Count</th>
+				<th>Item</th>
+				<th>Unit Price</th>
+				<th>Price</th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr *ngFor="let item of basketService.basket"> 
+				<td>{{item.count}} x</td>
+				<td>{{menuService.item(item.id).name}} x</td>
+				<td>${{menuService.item(item.id).price}}</td>
+				<td>${{item.price}}</td>
+				<td><button class="btn" (click)="basketService.add_item(item.id)">+</button></td>
+				<td><button class="btn" (click)="basketService.remove_item(item.id)">-</button></td> 
+			</tr>
+			<tr>
+				<th>Total</th>
+				<th></th>
+				<th></th>
+				<th>${{basketService.total_price() | number:'1.2-2'}}</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</table>	
+	</span>
 </div>
-<p>Total: ${{basketService.total_price()}}</p>
+
+<ng-template #noItems>
+	<p><small>You have no items in your basket</small></p>
+</ng-template>

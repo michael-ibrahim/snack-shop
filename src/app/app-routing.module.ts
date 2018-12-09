@@ -5,7 +5,8 @@ import { ItemComponent } from './components/item/item.component';
 import { BasketComponent } from './components/basket/basket.component';
 
 const routes: Routes = [
-	{ path: '', component: MenuComponent},
+	{ path: '', redirectTo: 'menu', pathMatch: 'full'},
+	{ path: 'menu', component: MenuComponent},
 	{ path: 'item/:id', component: ItemComponent}
 ];
 

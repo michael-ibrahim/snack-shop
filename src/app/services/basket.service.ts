@@ -14,7 +14,7 @@ export class BasketService {
 		for(var item of this.basket){
 			if(item.id == id){
 				item.count = item.count += 1;
-				item.price += this.menuService.item(id).price;
+				item.price = this.menuService.item(id).price * item.count;
 				return;
 			}
 		}
@@ -29,7 +29,7 @@ export class BasketService {
 				}
 				else{
 					this.basket[i].count = this.basket[i].count -= 1;
-					this.basket[i].price -= this.menuService.item(id).price;
+					this.basket[i].price = this.menuService.item(id).price * this.basket[i].count;
 				}
 				return;
 			}

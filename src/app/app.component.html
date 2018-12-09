@@ -1,10 +1,10 @@
 <span *ngIf="menuService.data_is_ready; else loading">
 	<div class="container-fluid">
 		<div class="row">
-			<div class= "col-8">
+			<div class= "col-7 scroll" style="border-right: 1px solid #ddd;">
 				<router-outlet></router-outlet>			
 			</div>
-			<div class= "col-4">
+			<div class= "col-5 scroll">
 				<app-basket></app-basket>
 			</div>
 		</div>

@@ -1,7 +1,24 @@
-<h1>Items</h1>
-<div *ngFor="let item of menuService.items">
-	<h4>{{item.name}}</h4>
-	<button (click)="view_details(item.id)">View</button> 
-	<button (click)="basketService.add_item(item.id)">+</button> 
-	<button (click)="basketService.remove_item(item.id)">-</button>
+<div class="p-3 m-3">
+	<h1>Items</h1>
+	<div class="list-group" *ngFor="let item of menuService.items">
+		<a class="list-group-item list-group-item-action flex-column m-1" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						<img (click)="view_details(item.id)" src="{{item.photoUrl}}" style="cursor:pointer">
+					</div>
+					<div class="col-lg-9">
+						<div (click)="view_details(item.id)" style="cursor:pointer">
+							<div class="d-flex w-100 justify-content-between">
+								<h5 class="mb-1">{{item.name}}</h5>
+								<small>${{item.price}}</small>
+							</div> 
+							<p class="mb-1 description">{{item.description}}</p>
+						</div>
+						<button class="btn" style="z-index:1000;" (click)="basketService.add_item(item.id)"> + </button>
+					</div>	
+				</div>
+			</div>
+		</a>
+	</div>
 </div>
