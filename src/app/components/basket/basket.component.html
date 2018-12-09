@@ -5,14 +5,14 @@
 			<tr>
 				<th>Count</th>
 				<th>Item</th>
-				<th>Unit Price</th>
+				<th>Unit</th>
 				<th>Price</th>
 				<th></th>
 				<th></th>
 			</tr>
 			<tr *ngFor="let item of basketService.basket"> 
 				<td>{{item.count}} x</td>
-				<td>{{menuService.item(item.id).name}} x</td>
+				<td>{{menuService.item(item.id).name}}</td>
 				<td>${{menuService.item(item.id).price}}</td>
 				<td>${{item.price}}</td>
 				<td><button class="btn" (click)="basketService.add_item(item.id)">+</button></td>
