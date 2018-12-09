@@ -1,4 +1,8 @@
 <h1>Items</h1>
-<div *ngFor="let item of items" (click)="view_details(item.id)">
+<div *ngFor="let item of menuService.items">
 	<h4>{{item.name}}</h4>
+	<button (click)="view_details(item.id)">View</button> 
+	<button (click)="basketService.add_item(item.id)">+</button> 
+	<button (click)="basketService.remove_item(item.id)">-</button>
 </div>
+<button (click)="basket()">Basket</button>

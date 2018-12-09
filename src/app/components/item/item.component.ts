@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from "../../services/menu.service";
+import { BasketService } from "../../services/basket.service";
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
 
@@ -10,29 +11,18 @@ import { Router } from '@angular/router';
 })
 export class ItemComponent implements OnInit {
 
-	item:any = {};
-
+	id:any;
+	
   constructor(
 		public menuService: MenuService,
+		public basketService: BasketService,
 		private route: ActivatedRoute,
 		public router: Router
-	) {
+	){
+		this.id = this.route.snapshot.params['id'];
 	}
 
-  ngOnInit() {
-		this.load_item()
-  }
-	
-	load_item(){
-		var id = this.route.snapshot.params['id'];
-		var items;
-		this.menuService.get_menu().subscribe(data => {
-			for(var item of data['items'])
-			{
-				if(item.id == id) this.item = item;
-			}
-		});
-	}
+  ngOnInit() {}
 	
 	menu(){
 		this.router.navigate(['']);

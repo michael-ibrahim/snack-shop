@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from "../../services/menu.service";
+import { BasketService } from "../../services/basket.service";
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,19 +10,23 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-	items:any;
 
   constructor(
 		public menuService: MenuService,
+		public basketService: BasketService,
 		public router: Router
 	){}
 
   ngOnInit() {
-		this.menuService.get_menu().subscribe(data => this.items = data['items']); 
+		 
   }
 	
 	view_details(id){
 		this.router.navigate(['item',id]);
+	}
+	
+	basket(){
+		this.router.navigate(['basket']);
 	}
 
 }

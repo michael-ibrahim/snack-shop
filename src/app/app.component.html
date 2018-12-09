@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<router-outlet *ngIf="menuService.data_is_ready; else loading"></router-outlet>
+
+<ng-template #loading>
+	<p>Loading ...</p>
+</ng-template>

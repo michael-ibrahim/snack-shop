@@ -1,0 +1,4 @@
+<div *ngFor="let item of basketService.basket">
+	<p>{{item.id}} x {{item.count}} = ${{item.price}}</p>
+</div>
+<p>Total: ${{basketService.total_price()}}</p>
