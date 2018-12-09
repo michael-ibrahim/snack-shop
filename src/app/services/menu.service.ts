@@ -6,16 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MenuService {
 
-	items:any=[];
 
   constructor(private http: HttpClient) {
-		this.get_data();
 	}
 	
-	get_data() {
-		this.http.get("https://api.myjson.com/bins/z9s2i").subscribe((data: any) => {
-			this.items = data.items;
-    });
+	get_menu() {
+		return this.http.get("https://api.myjson.com/bins/z9s2i");
 	}
 	
 }

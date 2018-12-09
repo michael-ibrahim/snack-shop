@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from "../../services/menu.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,13 +9,19 @@ import { MenuService } from "../../services/menu.service";
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public menuService:MenuService) { }
+	items:any;
+
+  constructor(
+		public menuService: MenuService,
+		public router: Router
+	){}
 
   ngOnInit() {
+		this.menuService.get_menu().subscribe(data => this.items = data['items']); 
   }
 	
-	view_details(){
-		
+	view_details(id){
+		this.router.navigate(['item',id]);
 	}
 
 }
