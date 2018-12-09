@@ -1,9 +1,11 @@
-<span *ngIf="menuService.data_is_ready; else loading">
+<span *ngIf="menuService.data_is_ready; else loading">	<!-- only display the router after the data is loaded -->
 	<div class="container-fluid">
 		<div class="row">
+			<!-- `menu` and `item details` views-->
 			<div class= "col-7 scroll" style="border-right: 1px solid #ddd;">
 				<router-outlet></router-outlet>			
 			</div>
+			<!-- `basket` view -->
 			<div class= "col-5 scroll">
 				<app-basket></app-basket>
 			</div>
@@ -11,6 +13,7 @@
 	</div>
 </span>
 
+<!-- Loading Prompt -->
 <ng-template #loading>
 	<p>Loading ...</p>
 </ng-template>

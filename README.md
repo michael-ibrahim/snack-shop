@@ -4,24 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. Do not forget to run `npm install` to install the dependencies. 
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## My Choices
+* Eager Loading instead of Lazy Loading coz it is a small app (only 3 pages)
+* The app has two services, `MenuService` which has the data of the menu items, and `BasketService` which holds all the information about the user's basket.
+* Loading the data in a data service `MenuService` only once at init, and use the data all through the app lifetime.
+* flag `data_is_ready` signals the loading of the data in `MenuService` .. Until the data is loaded, the components are not loaded. Instead, a loading prompt is displayed. See `app.component.html`
+* Using `bootstrap` 4 for styling and responsivness

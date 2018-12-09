@@ -1,9 +1,13 @@
 <div class="p-3 m-3">
+
 	<h1>Items</h1>
+	
+	<!-- List of items -->
 	<div class="list-group" *ngFor="let item of menuService.items">
 		<a class="list-group-item list-group-item-action flex-column m-1" >
 			<div class="container">
 				<div class="row">
+					<!-- item image -->
 					<div class="col-lg-3">
 						<img (click)="view_details(item.id)" src="{{item.photoUrl}}" style="cursor:pointer">
 					</div>

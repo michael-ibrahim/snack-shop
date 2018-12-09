@@ -25,7 +25,7 @@ export class ItemComponent implements OnInit {
   ngOnInit() {}
 	
 	menu(){
-		this.router.navigate(['']);
+		this.router.navigate(['menu']);
 	}
 
 }

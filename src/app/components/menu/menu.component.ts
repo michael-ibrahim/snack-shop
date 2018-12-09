@@ -21,6 +21,7 @@ export class MenuComponent implements OnInit {
 		 
   }
 	
+	//Navigate to item_details view
 	view_details(id){
 		this.router.navigate(['item',id]);
 	}
