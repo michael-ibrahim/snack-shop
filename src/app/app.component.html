@@ -1,4 +1,15 @@
-<router-outlet *ngIf="menuService.data_is_ready; else loading"></router-outlet>
+<span *ngIf="menuService.data_is_ready; else loading">
+	<div class="container-fluid">
+		<div class="row">
+			<div class= "col-8">
+				<router-outlet></router-outlet>			
+			</div>
+			<div class= "col-4">
+				<app-basket></app-basket>
+			</div>
+		</div>
+	</div>
+</span>
 
 <ng-template #loading>
 	<p>Loading ...</p>

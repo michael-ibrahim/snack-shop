@@ -6,8 +6,7 @@ import { BasketComponent } from './components/basket/basket.component';
 
 const routes: Routes = [
 	{ path: '', component: MenuComponent},
-	{ path: 'item/:id', component: ItemComponent},
-	{ path: 'basket', component: BasketComponent}
+	{ path: 'item/:id', component: ItemComponent}
 ];
 
 @NgModule({

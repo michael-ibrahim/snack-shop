@@ -24,9 +24,6 @@ export class MenuComponent implements OnInit {
 	view_details(id){
 		this.router.navigate(['item',id]);
 	}
-	
-	basket(){
-		this.router.navigate(['basket']);
-	}
+
 
 }
